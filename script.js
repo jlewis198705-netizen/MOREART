@@ -55,3 +55,34 @@ cerrarPopup.addEventListener("click", cerrarPopupFn)
 popupContacto.addEventListener("click", (e) => {
     if (e.target === popupContacto) cerrarPopupFn()
 })
+
+const panelSeleccion = document.getElementById("panelSeleccion")
+const btnsSeleccion = document.querySelectorAll(".btn-seleccion")
+const btnsIrSeccion = document.querySelectorAll(".btn-irSeccion")
+const heroSection = document.querySelector("section")
+
+function toggleSeleccion(e) {
+    e.preventDefault()
+    const isOpen = !panelSeleccion.hidden
+    panelSeleccion.hidden = isOpen
+    mobileMenu.classList.add("hidden")
+    if (!panelSeleccion.hidden) {
+        heroSection.scrollIntoView({ behavior: "smooth" })
+    }
+}
+
+btnsSeleccion.forEach(btn => btn.addEventListener("click", toggleSeleccion))
+
+btnsIrSeccion.forEach(btn => {
+    btn.addEventListener("click", () => {
+        panelSeleccion.hidden = true
+    })
+})
+
+document.addEventListener("click", (e) => {
+    if (!panelSeleccion.hidden &&
+        !e.target.closest(".btn-seleccion") &&
+        !e.target.closest("#panelSeleccion")) {
+        panelSeleccion.hidden = true
+    }
+})
