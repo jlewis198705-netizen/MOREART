@@ -86,10 +86,9 @@ const heroSection = document.querySelector("section")
 
 function toggleSeleccion(e) {
     e.preventDefault()
-    const isOpen = !panelSeleccion.hidden
-    panelSeleccion.hidden = isOpen
+    panelSeleccion.classList.toggle("hidden")
     mobileMenu.classList.add("hidden")
-    if (!panelSeleccion.hidden) {
+    if (!panelSeleccion.classList.contains("hidden")) {
         heroSection.scrollIntoView({ behavior: "smooth" })
     }
 }
@@ -98,15 +97,15 @@ btnsSeleccion.forEach(btn => btn.addEventListener("click", toggleSeleccion))
 
 btnsIrSeccion.forEach(btn => {
     btn.addEventListener("click", () => {
-        panelSeleccion.hidden = true
+        panelSeleccion.classList.add("hidden")
     })
 })
 
 document.addEventListener("click", (e) => {
-    if (!panelSeleccion.hidden &&
+    if (!panelSeleccion.classList.contains("hidden") &&
         !e.target.closest(".btn-seleccion") &&
         !e.target.closest("#panelSeleccion")) {
-        panelSeleccion.hidden = true
+        panelSeleccion.classList.add("hidden")
     }
 })
 
