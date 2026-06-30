@@ -11,16 +11,39 @@ mobileMenu.querySelectorAll("a").forEach(link => {
     })
 })
 
-const imagenes = document.querySelectorAll(".obra img")
-imagenes.forEach(img => {
-    img.addEventListener("click", (e) => {
-        e.stopPropagation()
-        img.classList.toggle("zoomed")
-    })
+const lightbox = document.getElementById("lightbox")
+const lbImagen = document.getElementById("lbImagen")
+const lbTitulo = document.getElementById("lbTitulo")
+const lbCerrar = document.getElementById("lbCerrar")
+
+function abrirLightbox(imgEl) {
+    const obra = imgEl.closest(".obra")
+    const titulo = obra ? obra.querySelector("h3")?.textContent : ""
+    lbImagen.src = imgEl.src
+    lbImagen.alt = imgEl.alt
+    lbTitulo.textContent = titulo
+    lightbox.classList.remove("hidden")
+    lightbox.classList.add("flex")
+    document.body.style.overflow = "hidden"
+}
+
+function cerrarLightbox() {
+    lightbox.classList.add("hidden")
+    lightbox.classList.remove("flex")
+    document.body.style.overflow = ""
+}
+
+lbCerrar.addEventListener("click", cerrarLightbox)
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) cerrarLightbox()
 })
 
-document.addEventListener("click", () => {
-    imagenes.forEach(img => img.classList.remove("zoomed"))
+document.addEventListener("click", (e) => {
+    const img = e.target.closest(".obra img")
+    if (img) {
+        e.stopPropagation()
+        abrirLightbox(img)
+    }
 })
 
 const popupContacto = document.getElementById("popupContacto")
@@ -206,21 +229,13 @@ imagenesDecorativas.forEach((archivo, i) => {
     div.className = "obra group cursor-pointer"
     div.innerHTML = `
         <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-            <img src="decorativas/${archivo}" alt="Deco ${i + 1}" loading="lazy" class="w-full h-auto block">
+            <img src="decorativas/${archivo}" alt="Deco ${i + 1}" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
             <div class="p-4">
                 <h3 class="text-sm font-medium text-stone-700">Deco ${i + 1}</h3>
             </div>
         </div>
     `
     gridDecorativas.appendChild(div)
-})
-
-const nuevasImagenes = gridDecorativas.querySelectorAll(".obra img")
-nuevasImagenes.forEach(img => {
-    img.addEventListener("click", (e) => {
-        e.stopPropagation()
-        img.classList.toggle("zoomed")
-    })
 })
 
 const imagenesMurals = [
@@ -272,7 +287,7 @@ imagenesMurals.forEach((archivo, i) => {
     div.className = "obra group cursor-pointer"
     div.innerHTML = `
         <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-            <img src="murales/${archivo}" alt="Mural ${i + 1}" loading="lazy" class="w-full h-auto block">
+            <img src="murales/${archivo}" alt="Mural ${i + 1}" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
             <div class="p-4">
                 <h3 class="text-sm font-medium text-stone-700">Mural ${i + 1}</h3>
             </div>
@@ -281,10 +296,4 @@ imagenesMurals.forEach((archivo, i) => {
     gridMurals.appendChild(div)
 })
 
-const nuevasImagenesMurales = gridMurals.querySelectorAll(".obra img")
-nuevasImagenesMurales.forEach(img => {
-    img.addEventListener("click", (e) => {
-        e.stopPropagation()
-        img.classList.toggle("zoomed")
-    })
-})
+

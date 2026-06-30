@@ -10,11 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .zoomed {
-            transform: scale(1.8);
-            cursor: zoom-out;
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.95) translateY(10px); }
             to   { opacity: 1; transform: scale(1) translateY(0); }
@@ -47,7 +42,7 @@
     <div class="absolute inset-0 opacity-40" style="background-image: url('img/marmol.jpg'); background-size: cover; background-position: center;"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/80"></div>
     <div class="relative z-10 text-center px-6">
-        <img src="img/MoreArt.png" alt="MoreArt" class="h-28 md:h-44 mx-auto mb-6">
+        <img src="img/MoreArt.png" alt="MoreArt" class="h-36 md:h-44 mx-auto mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
         <p class="text-stone-300 text-lg md:text-xl font-light mb-10">Hand-painted artwork</p>
         <a href="javascript:void(0)" class="btn-seleccion inline-block px-8 py-3 border-2 border-white text-white text-sm font-medium uppercase tracking-[0.15em] hover:bg-white hover:text-stone-900 transition-all duration-500 ease-in-out">View artworks</a>
         <div id="panelSeleccion" hidden class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
@@ -79,7 +74,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/1.jpg" alt="Abstracto en Rojo" class="w-full h-auto block">
+                    <img loading="lazy" src="img/1.jpg" alt="Abstracto en Rojo" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Estudio de Rembrandt/Carbon y tiza/55x35cm</h3>
                     </div>
@@ -88,7 +83,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/3.jpg" alt="Armonía Cromática" class="w-full h-auto block">
+                    <img loading="lazy" src="img/3.jpg" alt="Armonía Cromática" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Luciernaga/Oleo y collaje/50x70cm</h3>
                     </div>
@@ -97,7 +92,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/5.jpg" alt="Ecos del Silencio" class="w-full h-auto block">
+                    <img loading="lazy" src="img/5.jpg" alt="Ecos del Silencio" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Bucle/Oleo sobre lienzo/50x70cm</h3>
                     </div>
@@ -106,7 +101,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/6.jpeg" alt="Amanecer Abstracto" class="w-full h-auto block">
+                    <img loading="lazy" src="img/6.jpeg" alt="Amanecer Abstracto" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Nocturna Polinización/acrilico sobre lienzo/50x40cm</h3>
                     </div>
@@ -115,7 +110,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/7.jpg" alt="Reflejos" class="w-full h-auto block">
+                    <img loading="lazy" src="img/7.jpg" alt="Reflejos" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Generacion 5G/Oleo y collage/87x58cm</h3>
                     </div>
@@ -124,7 +119,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/foto2.jpg" alt="Paisaje Interior" class="w-full h-auto block">
+                    <img loading="lazy" src="img/foto2.jpg" alt="Paisaje Interior" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Ultima cena/Acrilico sobre lienzo/60x112cm</h3>
                     </div>
@@ -133,7 +128,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/foto-4.jpg" alt="Composición Lírica" class="w-full h-auto block">
+                    <img loading="lazy" src="img/foto-4.jpg" alt="Composición Lírica" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Retrato/Lápiz carbon sobre carton/70x40cm</h3>
                     </div>
@@ -142,7 +137,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/IMG_20260627_180335.jpg" alt="Luz y Sombra" class="w-full h-auto block">
+                    <img loading="lazy" src="img/IMG_20260627_180335.jpg" alt="Luz y Sombra" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Transfiguracuin Cuantica/oleo sobre lienzo/50x70cm</h3>
                     </div>
@@ -178,7 +173,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="dibujos/-4940956778938609213_121.jpg" alt="Sketch 1" loading="lazy" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609213_121.jpg" alt="Sketch 1" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Sketch 1</h3>
                     </div>
@@ -187,7 +182,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="dibujos/-4940956778938609214_121.jpg" alt="Sketch 2" loading="lazy" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609214_121.jpg" alt="Sketch 2" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Sketch 2</h3>
                     </div>
@@ -196,7 +191,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="dibujos/-4940956778938609215_121.jpg" alt="Sketch 3" loading="lazy" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609215_121.jpg" alt="Sketch 3" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Sketch 3</h3>
                     </div>
@@ -205,7 +200,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="dibujos/-4940956778938609216_121.jpg" alt="Sketch 4" loading="lazy" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609216_121.jpg" alt="Sketch 4" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Sketch 4</h3>
                     </div>
@@ -214,7 +209,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="dibujos/-4940956778938609217_121.jpg" alt="Sketch 5" loading="lazy" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609217_121.jpg" alt="Sketch 5" loading="lazy" class="w-full h-auto aspect-[4/3] object-cover block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Sketch 5</h3>
                     </div>
@@ -260,6 +255,14 @@
         <p class="text-stone-700 text-base mb-2">moreartgallery26@gmail.com</p>
         <p class="text-stone-600 text-sm mb-8">I'll get back to you as soon as possible</p>
         <a href="mailto:moreartgallery26@gmail.com" class="inline-block w-full px-8 py-4 bg-stone-900 text-white text-sm uppercase tracking-[0.2em] hover:bg-stone-700 transition-all duration-500 ease-in-out rounded-xl font-semibold">Send email</a>
+    </div>
+</div>
+
+<div id="lightbox" class="fixed inset-0 z-[70] hidden bg-black/90 items-center justify-center">
+    <div class="relative max-w-[90vw] max-h-[90vh]">
+        <button id="lbCerrar" class="absolute -top-10 right-0 text-white text-4xl leading-none hover:text-stone-300 transition-colors">&times;</button>
+        <img id="lbImagen" class="max-w-full max-h-[80vh] object-contain rounded-lg">
+        <p id="lbTitulo" class="text-white text-center mt-3 text-sm font-light"></p>
     </div>
 </div>
 
