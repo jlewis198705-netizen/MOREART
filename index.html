@@ -36,10 +36,10 @@
         </nav>
         <button id="menuBtn" class="md:hidden text-2xl text-stone-700 leading-none">☰</button>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden border-t bg-white px-6 py-4 flex flex-col gap-4">
-        <a href="javascript:void(0)" class="btn-seleccion text-sm font-medium text-stone-600">Obras</a>
-        <a href="#artista" class="text-sm font-medium text-stone-600">Artista</a>
-        <a href="#" id="botonContactoMobile" class="text-sm font-medium text-stone-600">Contacto</a>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-300 px-6 py-4 flex flex-col gap-4" style="background-image: url('img/marmol.jpg'); background-size: cover; background-position: center;">
+        <a href="javascript:void(0)" class="btn-seleccion text-sm font-medium text-stone-800">Obras</a>
+        <a href="#artista" class="text-sm font-medium text-stone-800">Artista</a>
+        <a href="#" id="botonContactoMobile" class="text-sm font-medium text-stone-800">Contacto</a>
     </div>
 </header>
 
@@ -47,7 +47,7 @@
     <div class="absolute inset-0 opacity-40" style="background-image: url('img/marmol.jpg'); background-size: cover; background-position: center;"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/80"></div>
     <div class="relative z-10 text-center px-6">
-        <img src="img/MoreArt .png" alt="MoreArt" class="h-28 md:h-44 mx-auto mb-6">
+        <img src="img/MoreArt.png" alt="MoreArt" class="h-28 md:h-44 mx-auto mb-6">
         <p class="text-stone-300 text-lg md:text-xl font-light mb-10">Hand-painted artwork</p>
         <a href="javascript:void(0)" class="btn-seleccion inline-block px-8 py-3 border-2 border-white text-white text-sm font-medium uppercase tracking-[0.15em] hover:bg-white hover:text-stone-900 transition-all duration-500 ease-in-out">View artworks</a>
         <div id="panelSeleccion" hidden class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
@@ -55,9 +55,17 @@
                 <span class="text-sm font-semibold uppercase tracking-widest">Originals</span>
                 <span class="block text-xs font-light text-stone-400 group-hover:text-stone-500 mt-2">Unique handmade pieces</span>
             </a>
+            <a href="#murals" class="btn-irSeccion group px-8 py-5 bg-stone-900 text-white rounded-xl hover:bg-white hover:text-stone-900 transition-all duration-500 ease-in-out text-center min-w-[180px] shadow-lg">
+                <span class="text-sm font-semibold uppercase tracking-widest">Murals</span>
+                <span class="block text-xs font-light text-stone-400 group-hover:text-stone-500 mt-2">Hand-painted murals</span>
+            </a>
             <a href="#decorativas" class="btn-irSeccion group px-8 py-5 bg-stone-900 text-white rounded-xl hover:bg-white hover:text-stone-900 transition-all duration-500 ease-in-out text-center min-w-[180px] shadow-lg">
                 <span class="text-sm font-semibold uppercase tracking-widest">Decorative</span>
                 <span class="block text-xs font-light text-stone-400 group-hover:text-stone-500 mt-2">Pieces to beautify your space</span>
+            </a>
+            <a href="#sketchs" class="btn-irSeccion group px-8 py-5 bg-stone-900 text-white rounded-xl hover:bg-white hover:text-stone-900 transition-all duration-500 ease-in-out text-center min-w-[180px] shadow-lg">
+                <span class="text-sm font-semibold uppercase tracking-widest">Sketchs</span>
+                <span class="block text-xs font-light text-stone-400 group-hover:text-stone-500 mt-2">Hand-drawn sketches</span>
             </a>
         </div>
     </div>
@@ -125,7 +133,7 @@
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/foto 4.jpg" alt="Composición Lírica" class="w-full h-auto block">
+                    <img src="img/foto-4.jpg" alt="Composición Lírica" class="w-full h-auto block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Retrato/Lápiz carbon sobre carton/70x40cm</h3>
                     </div>
@@ -137,15 +145,6 @@
                     <img src="img/IMG_20260627_180335.jpg" alt="Luz y Sombra" class="w-full h-auto block">
                     <div class="p-4">
                         <h3 class="text-sm font-medium text-stone-700">Transfiguracuin Cuantica/oleo sobre lienzo/50x70cm</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="obra group cursor-pointer">
-                <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/8.jpg" alt="Horizonte Soñado" class="w-full h-auto block">
-                    <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Horizonte Soñado/Acrilico sobre lienzo/150x50cm</h3>
                     </div>
                 </div>
             </div>
@@ -159,85 +158,65 @@
     <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-light text-center mb-2">Obras</h2>
         <p class="text-stone-400 text-center text-sm mb-12 md:mb-16">Selección de piezas Decorativas</p>
+        <div id="gridDecorativas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"></div>
+    </div>
+</section>
+
+<section id="murals" class="py-16 md:py-24 px-6 scroll-mt-16" style="background-image: url('img/marmol.jpg'); background-size: cover; background-position: center;">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-light text-center mb-2">Murals</h2>
+        <p class="text-stone-400 text-center text-sm mb-12 md:mb-16">Selección de murales</p>
+        <div id="gridMurals" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"></div>
+    </div>
+</section>
+
+<section id="sketchs" class="py-16 md:py-24 px-6 scroll-mt-16" style="background-image: url('img/marmol.jpg'); background-size: cover; background-position: center;">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-light text-center mb-2">Sketchs</h2>
+        <p class="text-stone-400 text-center text-sm mb-12 md:mb-16">Selección de dibujos</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/1.jpg" alt="Abstracto en Rojo" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609213_121.jpg" alt="Sketch 1" loading="lazy" class="w-full h-auto block">
                     <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Estudio de Rembrandt/Carbon y tiza/55x35cm</h3>
+                        <h3 class="text-sm font-medium text-stone-700">Sketch 1</h3>
                     </div>
                 </div>
             </div>
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/3.jpg" alt="Armonía Cromática" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609214_121.jpg" alt="Sketch 2" loading="lazy" class="w-full h-auto block">
                     <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Luciernaga/Oleo y collaje/50x70cm</h3>
+                        <h3 class="text-sm font-medium text-stone-700">Sketch 2</h3>
                     </div>
                 </div>
             </div>
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/5.jpg" alt="Ecos del Silencio" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609215_121.jpg" alt="Sketch 3" loading="lazy" class="w-full h-auto block">
                     <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Bucle/Oleo sobre lienzo/50x70cm</h3>
+                        <h3 class="text-sm font-medium text-stone-700">Sketch 3</h3>
                     </div>
                 </div>
             </div>
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/6.jpeg" alt="Amanecer Abstracto" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609216_121.jpg" alt="Sketch 4" loading="lazy" class="w-full h-auto block">
                     <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Nocturna Polinización/acrilico sobre lienzo/50x40cm</h3>
+                        <h3 class="text-sm font-medium text-stone-700">Sketch 4</h3>
                     </div>
                 </div>
             </div>
 
             <div class="obra group cursor-pointer">
                 <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/7.jpg" alt="Reflejos" class="w-full h-auto block">
+                    <img src="dibujos/-4940956778938609217_121.jpg" alt="Sketch 5" loading="lazy" class="w-full h-auto block">
                     <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Generacion 5G/Oleo y collage/87x58cm</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="obra group cursor-pointer">
-                <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/foto2.jpg" alt="Paisaje Interior" class="w-full h-auto block">
-                    <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Ultima cena/Acrilico sobre lienzo/60x112cm</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="obra group cursor-pointer">
-                <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/foto 4.jpg" alt="Composición Lírica" class="w-full h-auto block">
-                    <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Retrato/Lápiz carbon sobre carton/70x40cm</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="obra group cursor-pointer">
-                <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/IMG_20260627_180335.jpg" alt="Luz y Sombra" class="w-full h-auto block">
-                    <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Transfiguracuin Cuantica/oleo sobre lienzo/50x70cm</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="obra group cursor-pointer">
-                <div class="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="img/8.jpg" alt="Horizonte Soñado" class="w-full h-auto block">
-                    <div class="p-4">
-                        <h3 class="text-sm font-medium text-stone-700">Horizonte Soñado/Acrilico sobre lienzo/150x50cm</h3>
+                        <h3 class="text-sm font-medium text-stone-700">Sketch 5</h3>
                     </div>
                 </div>
             </div>
@@ -273,13 +252,13 @@
 </footer>
 
 <div id="popupContacto" class="fixed inset-0 z-[60] hidden bg-black/60 backdrop-blur-sm items-center justify-center transition-all duration-300">
-    <div class="bg-white rounded-3xl shadow-2xl px-12 py-14 w-full max-w-sm mx-6 text-center relative animate-fadeIn">
-        <button id="cerrarPopup" class="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition-all leading-none text-2xl">&times;</button>
-        <div class="w-16 h-[3px] bg-stone-200 mx-auto mb-7 rounded-full"></div>
+    <div class="rounded-3xl shadow-2xl px-12 py-14 w-full max-w-sm mx-6 text-center animate-fadeIn" style="background-image: url('img/marmol.jpg'); background-size: cover; background-position: center;">
+        <button id="cerrarPopup" class="w-9 h-9 flex items-center justify-center mx-auto mb-4 rounded-full text-stone-600 hover:text-stone-900 hover:bg-black/5 transition-all leading-none text-2xl">&times;</button>
+        <div class="w-16 h-[3px] bg-stone-400/60 mx-auto mb-7 rounded-full"></div>
         <div class="text-5xl mb-6 text-stone-700">✉</div>
         <h2 class="text-3xl font-light text-stone-800 mb-3">Contact</h2>
-        <p class="text-stone-400 text-base mb-2">moreart@gmail.com</p>
-        <p class="text-stone-400 text-sm mb-8">I'll get back to you as soon as possible</p>
+        <p class="text-stone-700 text-base mb-2">moreartgallery26@gmail.com</p>
+        <p class="text-stone-600 text-sm mb-8">I'll get back to you as soon as possible</p>
         <a href="mailto:moreart@gmail.com" class="inline-block w-full px-8 py-4 bg-stone-900 text-white text-sm uppercase tracking-[0.2em] hover:bg-stone-700 transition-all duration-500 ease-in-out rounded-xl font-semibold">Send email</a>
     </div>
 </div>
