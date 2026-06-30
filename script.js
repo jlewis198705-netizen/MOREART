@@ -80,6 +80,7 @@ popupContacto.addEventListener("click", (e) => {
 })
 
 const panelSeleccion = document.getElementById("panelSeleccion")
+const heroCopyright = document.getElementById("heroCopyright")
 const btnsSeleccion = document.querySelectorAll(".btn-seleccion")
 const btnsIrSeccion = document.querySelectorAll(".btn-irSeccion")
 const heroSection = document.querySelector("section")
@@ -87,6 +88,7 @@ const heroSection = document.querySelector("section")
 function toggleSeleccion(e) {
     e.preventDefault()
     panelSeleccion.classList.toggle("hidden")
+    heroCopyright.classList.toggle("hidden")
     mobileMenu.classList.add("hidden")
     if (!panelSeleccion.classList.contains("hidden")) {
         heroSection.scrollIntoView({ behavior: "smooth" })
@@ -98,6 +100,7 @@ btnsSeleccion.forEach(btn => btn.addEventListener("click", toggleSeleccion))
 btnsIrSeccion.forEach(btn => {
     btn.addEventListener("click", () => {
         panelSeleccion.classList.add("hidden")
+        heroCopyright.classList.remove("hidden")
     })
 })
 
@@ -106,6 +109,7 @@ document.addEventListener("click", (e) => {
         !e.target.closest(".btn-seleccion") &&
         !e.target.closest("#panelSeleccion")) {
         panelSeleccion.classList.add("hidden")
+        heroCopyright.classList.remove("hidden")
     }
 })
 
